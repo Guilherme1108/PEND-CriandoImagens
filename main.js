@@ -5,39 +5,40 @@ const imagens = [
 
     //criando um objeto
     {
-        nome: 'castelo',
+        nome: 'Castelo',
         url: './img/castelo.jpg'
     },
     {
-        nome: 'castelo roxo',
-        url: './img/casteloRoxo.jpg'
+        nome: 'Castelo Roxo',
+        url: './img/casaBranca.jpeg'
     },
     {
-        nome: 'estrelada',
+        nome: 'Noite Estrelada',
         url: './img/estrelada.webp'
     },
         {
-        nome: 'foguete',
+        nome: 'Foguete',
         url: './img/foguete.jpg'
     },
         {
-        nome: 'casa branca',
-        url: './img/casaBranca.jpeg'
+        nome: 'Casa Branca',
+        url: './img/casteloRoxo.jpg'
     },
-        {
-        nome: 'cristo redentor',
-        url: './img/cristoRedentor.jpeg'
-    },
-        {
-        nome: 'japao',
+            {
+        nome: 'Japão',
         url: './img/japao.jpeg'
     },
         {
-        nome: 'max',
+        nome: 'Cristo Redentor',
+        url: './img/cristoRedentor.jpeg'
+    },
+
+        {
+        nome: 'Golem de Pedra',
         url: './img/maxresdefault.jpg'
     },
         {
-        nome: 'peixe',
+        nome: 'Peixe',
         url: './img/peixe.png'
     },
     
@@ -46,23 +47,20 @@ const imagens = [
 
 function criarImagem (srcImagem) {
     const galeria = document.getElementById('galeria')
+    const itens = document.createElement('div')
     const imagem = document.createElement('img')
+    const nomeImagem = document.createElement('span')
     imagem.src = srcImagem.url
-    galeria.appendChild(imagem)
-}
+    nomeImagem.textContent = srcImagem.nome
 
-function criarTexto (nomeImagem) {
-    const texto = document.getElementById('itens')
-    const nome = document.createElement('span')
-    nome.nome = nomeImagem.nome
-    texto.appendChild(nome)
+    galeria.appendChild(itens)
+    itens.appendChild(imagem)
+    itens.appendChild(nomeImagem)
 }
 
 function carregarImagens() {
 
 imagens.forEach (criarImagem)
-imagens.forEach (criarTexto)
-
 
 }
 
